@@ -23,10 +23,10 @@ const GIFTS = [
 ];
 
 const INTRO_PHOTOS = [
-  '/gallery/2.jpg',
-  '/gallery/7.jpg',
-  '/gallery/8.jpg',
-  '/gallery/9.jpg',
+  `${import.meta.env.BASE_URL}gallery/2.jpg`,
+  `${import.meta.env.BASE_URL}gallery/7.jpg`,
+  `${import.meta.env.BASE_URL}gallery/8.jpg`,
+  `${import.meta.env.BASE_URL}gallery/9.jpg`,
 ];
 
 const MESSAGES = [
@@ -50,12 +50,12 @@ const MESSAGES = [
     content: "Những kỷ niệm ngọt ngào mà anh luôn trân trọng và giữ gìn trong tim.",
     bg: "from-pink-100 to-purple-100",
     images: [
-      '/gallery/1.jpg',
-      '/gallery/2.jpg',
-      '/gallery/3.jpg',
-      '/gallery/4.jpg',
-      '/gallery/5.jpg',
-      '/gallery/6.jpg',
+      `${import.meta.env.BASE_URL}gallery/1.jpg`,
+      `${import.meta.env.BASE_URL}gallery/2.jpg`,
+      `${import.meta.env.BASE_URL}gallery/3.jpg`,
+      `${import.meta.env.BASE_URL}gallery/4.jpg`,
+      `${import.meta.env.BASE_URL}gallery/5.jpg`,
+      `${import.meta.env.BASE_URL}gallery/6.jpg`,
     ],
     button: "Xem tiếp điều bất ngờ"
   },
@@ -319,7 +319,7 @@ const AudioWishes = ({ onPlay, onStop }: { onPlay: () => void; onStop: () => voi
   const wishesData = [
     {
       name: "Lời chúc đặc biệt từ Hào Bò Nghệ An 🎙️",
-      audioSrc: "/gallery/ghiam.m4a",
+      audioSrc: `${import.meta.env.BASE_URL}gallery/ghiam.m4a`,
       text: "Bấm play để nghe lời chúc sinh nhật gửi riêng đến em! 🎂 Lưu Ý: Hãy nghe 1 mình!"
     }
   ];
@@ -531,7 +531,7 @@ export default function App() {
   // Khởi tạo audio element 1 lần duy nhất
   useEffect(() => {
     // Link nhạc MP3 trực tiếp – hoạt động trên cả mobile lẫn desktop
-    const audio = new Audio('/gallery/nhacnen.mp3');
+    const audio = new Audio(`${import.meta.env.BASE_URL}gallery/nhacnen.mp3`);
     audio.loop = true;
     audio.volume = 0.4;
     audio.muted = true;
@@ -740,7 +740,7 @@ export default function App() {
             <div className="mb-4">
               <div className="w-full h-32 rounded-2xl overflow-hidden mb-3 shadow-inner border-4 border-white">
                 <img 
-                  src="/gallery/9.jpg" 
+                  src={`${import.meta.env.BASE_URL}gallery/9.jpg`} 
                   alt="Cover" 
                   className="w-full h-full object-cover"
                 />
